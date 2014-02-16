@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+    <body>
+        <script>
+
+d3.json("Workbook1.json",function(data){ 
+
+var canvas=d3.select("body")
+             .append("svg")
+             .attr("width",500)
+             .attr("height",500)
+
+canvas.selectAll("rect")
+      .data(data)//here we specify where our data is coming from
+      .enter()
+      .append("rect")//append rect for each data element
+      .attr("width", function(d){return d.age})//here we have to specify the column we want to visulize)
+      .attr("height",50)
+      .attr("y",function(d,i){return i*50 ;})
+      .attr("fill","blue")
+
+
+
+
+
+
+})//put the path of the file , callback fn which will be loaded once the data is loaded
+
+
+
+
+                
+        </script>
+    </body>
+</html>

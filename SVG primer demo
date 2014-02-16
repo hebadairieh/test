@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+        <style type="text/css">
+
+
+        </style>
+    </head>
+    <body>
+
+
+        <script>
+
+var canvas=d3.select("body")
+            .append("svg")
+            .attr("width",500)
+            .attr("height",500);
+
+canvas.append("circle")
+         .attr("cx",25)
+         .attr("cy",25)
+         .attr("r",20)
+         .attr("fill","red")
+         .attr("opacity",0.50)  
+                
+canvas.append("circle")
+         .attr("cx",25)
+         .attr("cy",50)
+         .attr("r",20)
+         .attr("fill","green")
+         .attr("opacity",0.50)
+         .attr("stroke","black")  
+
+         //or we can write SVG elements inside the body.
+
+        </script>
+    </body>
+</html>

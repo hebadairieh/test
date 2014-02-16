@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+    <body>
+        <script>
+var data=[10];
+
+var canvas=d3.select("body")
+             .append("svg")
+             .attr("width",500)
+             .attr("height",500);   
+
+var circle =canvas.append("circle")
+          .attr("cx",50)
+          .attr("cy",50)
+          .attr("r",25);//here we added a circle manually , without data binding  
+
+
+circle.transition()
+      .duration(1500)//in milliseconds .this is 1.5 seconds
+      .delay(1000)//it will transition after the specified time.this is two seconds
+      .attr("cx",200)//this is the change that we want to see 
+      // .transition()//here we will add another transition after the first one 
+      // .attr("cy",200)
+      // .transition()
+      // .attr("cx",50);   
+      .each("end",function(){d3.select (this).attr("fill","green")});//this is an event listener . end means the end of the transition ,here it will apply the function after the previous transition ends . (this) refers to the element im in , which is the circle in this case
+                         
+                
+        </script>
+    </body>
+</html>

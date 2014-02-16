@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+    <body>
+        <script>
+
+d3.select("body").append("p").text("hebaaaaa");
+
+var canvas = d3.select("body").append("svg")
+        .attr("width",500)
+        .attr("height",500);
+var circle=canvas.append("circle") 
+        .attr("cx",250)   
+        .attr("cy",250)
+        .attr("r",50)
+        .attr("fill","red");
+
+var rec=canvas.append("rect")
+        .attr("width",300)
+        .attr("height",200)
+        .attr("fill","green");
+
+var line=canvas.append("line")
+        .attr("x1",50)
+        .attr("y1",50)
+        .attr("x2",400)
+        .attr("y2",500)
+        .attr("stroke","green")
+        .attr("stroke-width",10);
+
+  var texttest=canvas.append("text")
+                        .attr("x",200)
+                        .attr("y",200)
+                        .text("hebaa");                          
+
+
+
+
+                
+        </script>
+    </body>
+</html>

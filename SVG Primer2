@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+        <style type="text/css">
+
+
+        </style>
+    </head>
+    <body>
+
+
+        <script>
+
+var data=[10,20,30,40,50];
+
+var canvas=d3.select("body")
+            .append("svg")
+            .attr("width",500)
+            .attr("height",500);
+
+ var circles = canvas.selectAll("circle")
+        .data(data)
+        .enter()
+        .append("circle")
+        .attr("cx" , function (d , i) { //must include d and i as arguments
+            return i*100 + 50; })
+        .attr("cy" , 250 )
+        .attr("r", function(d){return d ;})
+        .attr("fill","green")
+        .attr("stroke","orange")
+        .attr("stroke-width",function(d){return d/2 ;});
+
+         //or we can write SVG elements inside the body.
+
+        </script>
+    </body>
+</html>

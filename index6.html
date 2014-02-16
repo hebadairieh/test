@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+    <body>
+        <script>
+var data=[10];
+
+var canvas=d3.select("body")
+             .append("svg")
+             .attr("width",500)
+             .attr("height",500);   
+
+var circle1 =canvas.append("circle")
+          .attr("cx",50)
+          .attr("cy",100)
+          .attr("r",25);//here we added a circle manually , without data binding  
+
+var circle2 =canvas.append("circle")
+          .attr("cx",50)
+          .attr("cy",200)
+          .attr("r",25)
+          .attr("fill","red");               
+
+var circles =canvas.selectAll("circle")
+                .data(data)
+                .attr("fill","green")//this will apply to only one of the circles , because i have more DOM elements that data elements.So how to choose the circle that will be bound to the data element {10}?!as follows:
+                .exit()
+                .attr("fill","blue");
+               
+                         
+                
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+    <body>
+        <script>
+
+d3.select("body").append("p").text("hebaaaaa");
+
+var dataArray=[20,40,50];   
+var canvas = d3.select("body").append("svg")
+        .attr("width",500)
+        .attr("height",500);
+
+var bars=canvas.selectAll("rect")  //this will return empty array , then we will bind this empty array with the data
+              .data(dataArray) //bind data to rectangles
+              .enter() //create a place holder for each data element
+                .append("rect") //for each place holder append a rectangle
+                .attr("height",function(d){return d*5;})  //we will make the width a function of the data  and it will act as a loop through each data element
+                .attr("width",50)    
+                .attr("x",function(d,i){return i*100});
+
+
+
+
+                
+        </script>
+    </body>
+</html>
